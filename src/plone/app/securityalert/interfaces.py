@@ -8,6 +8,9 @@ from zope.i18nmessageid import MessageFactory
 _ = MessageFactory('plone.app.securityalert')
 
 
+class ISecurityAlertTool(Interface):
+    pass
+
 class ISecurityAlertSettings(Interface):
     """Global Security Alert settings. This describes records stored in the
     configuration registry and obtainable via plone.registry.

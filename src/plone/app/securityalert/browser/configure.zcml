@@ -4,6 +4,10 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="plone.app.securityalert">
 
+    <browser:resource
+       name="securityalert-icon.png"
+       file="icon.png" />
+
     <include package="plone.app.registry" />
 
     <!-- Control panel -->
