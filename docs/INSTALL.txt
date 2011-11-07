@@ -1,0 +1,15 @@
+plone.app.securityalert Installation
+=======================
+
+ * Add ``plone.app.securityalert`` to the list of eggs to install:
+
+    [instance]
+    recipe = plone.recipe.zope2instance
+    eggs =
+        plone.app.securityalert
+
+  * Re-run buildout, e.g. with:
+
+    $ ./bin/buildout
+
+
