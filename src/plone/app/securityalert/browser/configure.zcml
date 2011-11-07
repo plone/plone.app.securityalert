@@ -1,5 +1,17 @@
 <configure
-    xmlns="http://namespaces.zope.org/browser"
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="plone.app.securityalert">
+
+    <include package="plone.app.registry" />
+
+    <!-- Control panel -->
+    <browser:page
+        name="securityalert-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.SecurityAlertSettingsControlPanel"
+        permission="cmf.ManagePortal"
+        />
 
 </configure>
