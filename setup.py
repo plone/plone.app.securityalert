@@ -28,7 +28,13 @@ setup(name='plone.app.securityalert',
       install_requires=[
           'setuptools',
           'plone.app.testing',
+          'plone.app.registry',
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+          ],
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
