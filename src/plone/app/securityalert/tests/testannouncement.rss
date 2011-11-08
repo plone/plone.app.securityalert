@@ -21,13 +21,14 @@
     <link>http://127.0.0.1:9191/</link>
     <description></description>
     <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
-    
-    <security:announcement xlmns:security="http://namespaces.plone.org/securityalert" />
-    
-    Stuff.
-
-
+        ice cream fail.
     ]]></content:encoded>
+
+    <securityalert:alert xmlns:securityalert="http://namespaces.plone.org/securityalert" state="published">
+        <securityalert:match package="mr.whippy" min="0.1" max="0.1r123">Mr Whippy</securityalert:match>
+        <securityalert:match package="zope" min="0.1" max="0.1r123">zope</securityalert:match>
+        <securityalert:suppress package="hotfix123" min="0.1" max="0.1">hotfix123</secuirtyalert:suppress>
+    </securityalert:alert>
 
     <dc:publisher>No publisher</dc:publisher>
     <dc:creator>Object Owner</dc:creator>
