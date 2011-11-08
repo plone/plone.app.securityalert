@@ -29,6 +29,8 @@ setup(name='plone.app.securityalert',
           'setuptools',
           'plone.app.testing',
           'plone.app.registry',
+          'lxml',
+          'feedparser',
       ],
       extras_require={
           'test': [
