@@ -11,4 +11,4 @@ class ToolInstallation(unittest.TestCase):
 
     def test_tool_is_installed(self):
         portal = self.layer['portal']
-        self.assertTrue('portal_security_alerts' in portal.objectIds())
+        self.assertTrue('portal_security_alert' in portal.objectIds())
