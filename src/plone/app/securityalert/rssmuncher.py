@@ -1,32 +1,36 @@
-import feedparser
 from lxml import etree
 
 
-NAMESPACE = "http://namespaceses.plone.org/securityalert"
+XMLNS = {
+        "rss": "http://purl.org/rss/1.0/",
+        "alert": "http://namespaces.plone.org/securityalert" }
 
 
-def fetch(url):
+def fetch(url=None, stream=None):
     """Returns a list of lxml etree's from an rss at url""" 
 
-    rss = feedparser.parse (url)
 
-    # TODO: exception from feedparser is not raised but passed back in "bozo_exception" - please
-    # inspect and deal with it.
+    if stream is None:
+        raise Exception ("No stream to read rss data from")
 
-    
+    rssdoc = etree.parse(stream)
+    items = rssdoc.findall("//rss:content/rss:item", namespace=XMLNS)
 
     import pdb; pdb.set_trace()
-
+    
     announcements = []
-    for item in rss.entries:
-        announcement = {"link": item.link}
+    for item in items:
+        
+        alert_e = item.xpath("//alert:alert", namespace=XMLNS)
 
+        alert = {}
+
+        # below is old
+        announcement = {"link": item.link}
         content = item.content
         tree = etree.fromstring(content)
         announcement["payload"] = tree.find("{%s}announcement" % NAMESPACE)
 
-
-        announcements.append(announcement)
 
     return announcements
 
@@ -42,8 +46,5 @@ def fetch(url):
 
 
 
-
-
-    return None
 
 

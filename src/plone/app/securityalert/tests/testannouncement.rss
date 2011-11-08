@@ -27,7 +27,7 @@
     <securityalert:alert xmlns:securityalert="http://namespaces.plone.org/securityalert" state="published">
         <securityalert:match package="mr.whippy" min="0.1" max="0.1r123">Mr Whippy</securityalert:match>
         <securityalert:match package="zope" min="0.1" max="0.1r123">zope</securityalert:match>
-        <securityalert:suppress package="hotfix123" min="0.1" max="0.1">hotfix123</secuirtyalert:suppress>
+        <securityalert:suppress package="hotfix123" min="0.1" max="0.1">hotfix123</securityalert:suppress>
     </securityalert:alert>
 
     <dc:publisher>No publisher</dc:publisher>

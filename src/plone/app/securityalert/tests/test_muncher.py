@@ -16,5 +16,5 @@ class TesterMuncher(unittest.TestCase):
         testannouncementfile = pkg_resources.resource_filename("plone.app.securityalert.tests", "testannouncement.rss")
 
         fin = open(testannouncementfile, "r")
-        result = fetch(fin)
+        result = fetch(stream=fin)
         self.assertTrue(len(result))
