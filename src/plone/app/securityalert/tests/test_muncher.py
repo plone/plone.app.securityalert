@@ -13,6 +13,8 @@ class TesterMuncher(unittest.TestCase):
     layer = SECURITYALERT_INTEGRATION_TESTING
 
     def test_tool_is_installed(self):
-        testannouncementfile = resource_filename("plone.app.securityalert.tests", "testannouncement.rss")
-        result = fetch("file://" + testannouncementfile)
+        testannouncementfile = pkg_resources.resource_filename("plone.app.securityalert.tests", "testannouncement.rss")
+
+        fin = open(testannouncementfile, "r")
+        result = fetch(fin)
         self.assertTrue(len(result))

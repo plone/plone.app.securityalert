@@ -10,6 +10,13 @@ def fetch(url):
 
     rss = feedparser.parse (url)
 
+    # TODO: exception from feedparser is not raised but passed back in "bozo_exception" - please
+    # inspect and deal with it.
+
+    
+
+    import pdb; pdb.set_trace()
+
     announcements = []
     for item in rss.entries:
         announcement = {"link": item.link}
@@ -17,6 +24,7 @@ def fetch(url):
         content = item.content
         tree = etree.fromstring(content)
         announcement["payload"] = tree.find("{%s}announcement" % NAMESPACE)
+
 
         announcements.append(announcement)
 
